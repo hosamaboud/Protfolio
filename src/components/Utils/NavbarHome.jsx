@@ -97,8 +97,19 @@ const Navbar = () => {
         >
           <img src={logo} alt="Logo" />
         </a>
+
         <div className={`nav__menu ${toggle}`} id="nav-menu">
           <ul className="nav__list grid">
+            <li className="nav__item">
+              <a
+                className="nav__link"
+                href="/Hossam_Samara_Aboud_CV.pdf"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <i className="ri-instance-line"></i>CV
+              </a>
+            </li>
             {navItems.map((item) => (
               <li className="nav__item" key={item.id}>
                 <a
