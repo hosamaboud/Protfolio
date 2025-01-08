@@ -46,6 +46,7 @@ const Footer = () => {
           </li>
           <li className="footer__link">
             <a
+              
               href="/Hossam_Samara_Aboud_CV.pdf"
               target="_blank"
               rel="noopener noreferrer"
