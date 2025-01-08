@@ -10,7 +10,7 @@ import github from "../../assets/images/img-portfolio/git-icon.svg";
 import figma from "../../assets/images/img-portfolio/figma-1.svg";
 import teamworkImage from "../../assets/images/img-portfolio/teamwork.svg";
 import Adaptability from "../../assets/images/img-portfolio/Adaptability.svg";
-import Communication from "../../assets/images/img-portfolio/communication.svg";
+import Communication from "../../assets/images/img-portfolio/Communication.svg";
 import Creativity from "../../assets/images/img-portfolio/Creativity.svg";
 import problemSolving from "../../assets/images/img-portfolio/problem-solving.svg";
 import Management from "../../assets/images/img-portfolio/Management.svg";
