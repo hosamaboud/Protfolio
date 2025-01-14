@@ -1,5 +1,5 @@
 .header {
-  background: var(--bg-navbar);
+  /* background: var(--bg-navbar); */
   height: 60px;
   position: fixed;
   width: 100%;
@@ -8,7 +8,7 @@
   z-index: var(--z-fixed);
 }
 .nav {
-  height: calc(var(--header-height));
+  /* height: calc(var(--header-height)); */
   height: 60px;
   display: flex;
   justify-content: space-between;
@@ -157,9 +157,9 @@
   }
 }
 @media screen and (min-width: 500px) and (max-width: 1023px) {
-  .header {
+  /* .header {
     background: transparent;
-  }
+  } */
   .nav,
   .nav__menu.open {
     width: 57%;
