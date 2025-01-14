@@ -103,7 +103,7 @@ const Navbar = () => {
             <li className="nav__item">
               <a
                 className="nav__link"
-                href="/Hossam_Samara_Aboud_CV.pdf"
+                href="/Hossam_Aboud_CV.pdf"
                 target="_blank"
                 rel="noopener noreferrer"
               >

@@ -1,7 +1,8 @@
-import pro_1 from "../../assets/images/img-portfolio/project1.jpg";
-import pro_2 from "../../assets/images/img-portfolio/project2.jpg";
-import pro_3 from "../../assets/images/img-portfolio/project3.jpg";
-import pro_4 from "../../assets/images/img-portfolio/project4.jpg";
+import ProjectCard from "./ProjectCard";
+import pro_1 from "../../assets/images/img-portfolio/coffee.png";
+import pro_2 from "../../assets/images/img-portfolio/Znoon.png";
+import pro_3 from "../../assets/images/img-portfolio/react.png";
+import pro_4 from "../../assets/images/img-portfolio/dash.png";
 
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
@@ -11,22 +12,31 @@ import { motion } from "framer-motion";
 const Projects = () => {
   const projects = [
     {
+      img: pro_1,
+      title: "Coffee Shop",
+      subtitle: "Web",
+      link: "https://brand-liard.vercel.app/",
+      github: "https://github.com/hosamaboud/coffee",
+    },
+    {
       img: pro_2,
       title: "ECommerce Store",
       subtitle: "Web",
       link: "https://brand-liard.vercel.app/",
+      github: "https://github.com/hosamaboud/Brand",
     },
     {
       img: pro_3,
-      title: "first project with React",
+      title: "First Project with React",
       subtitle: "Web",
       link: "https://when-i-learn-react.vercel.app/",
     },
     {
       img: pro_4,
-      title: "Coffee Shop",
+      title: "Dashboard",
       subtitle: "Web",
-      link: "https://coffee-eta-lyart.vercel.app/",
+      link: "https://dashbord-omega-five.vercel.app/",
+      github: "https://github.com/hosamaboud/Dashbord",
     },
   ];
 
@@ -34,30 +44,15 @@ const Projects = () => {
     dots: true,
     infinite: true,
     speed: 500,
-    slidesToShow: 3,
+    slidesToShow: 4,
     slidesToScroll: 1,
-    autoplay: true,
+    autoplay: false,
     autoplaySpeed: 3000,
     pauseOnHover: true,
     responsive: [
-      {
-        breakpoint: 1025,
-        settings: {
-          slidesToShow: 3,
-        },
-      },
-      {
-        breakpoint: 768,
-        settings: {
-          slidesToShow: 2,
-        },
-      },
-      {
-        breakpoint: 500,
-        settings: {
-          slidesToShow: 1,
-        },
-      },
+      { breakpoint: 1025, settings: { slidesToShow: 3 } },
+      { breakpoint: 768, settings: { slidesToShow: 2 } },
+      { breakpoint: 500, settings: { slidesToShow: 1 } },
     ],
   };
 
@@ -73,29 +68,7 @@ const Projects = () => {
       >
         <Slider {...settings} className="projects__container">
           {projects.map((project, index) => (
-            <motion.div
-              key={index}
-              className="project__content"
-              initial={{ opacity: 0, scale: 0.8 }}
-              whileInView={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.6, delay: index * 0.2 }}
-            >
-              <div>
-                <img
-                  src={project.img}
-                  alt={project.title}
-                  className="project__img"
-                  loading="lazy"
-                />
-              </div>
-              <div className="project_info">
-                <span className="project__subtitle">{project.subtitle}</span>
-                <h1 className="project__title">{project.title}</h1>
-                <a href={project.link} className="project__btn">
-                  View demo <i className="ri-arrow-right-fill"></i>
-                </a>
-              </div>
-            </motion.div>
+            <ProjectCard key={index} project={project} index={index} />
           ))}
         </Slider>
       </motion.div>

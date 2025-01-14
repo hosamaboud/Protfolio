@@ -1,7 +1,7 @@
 /* ============== start main section ================*/
 .home__container {
   row-gap: 4rem;
-  padding-top: 2rem;
+  padding-top: 1rem;
 }
 .home_data {
   row-gap: 1.5rem;
@@ -270,67 +270,141 @@
 /*  ============= start Projects section style ============= */
 
 .projects__container {
+  position: relative;
   overflow: inherit;
 }
 #projects > div > div > div > div > div > div > div {
-  margin: 0.5rem 1rem 0.5rem 0.3rem;
+  margin: 0.3rem;
 }
 .project__content {
-  min-height: 300px;
-  background: var(--container-color);
-  padding: 0 0 1rem;
-  border-radius: 1rem;
-  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
-  transition: transform 0.3s ease-in-out;
-  text-align: center;
-}
-
-.project__img {
-  border-radius: 0.75rem 0.75rem 0 0;
-  margin-bottom: 1rem;
-  transition: transform 0.3s ease-in-out;
+  border-radius: 0.5rem;
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
 }
 
 .project__content:hover {
-  transform: scale(1.05);
+  transform: scale(0.98);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+.project__img {
+  transition: all 0.3s ease-in-out;
+  border-radius: 0.5rem;
+  min-height: 120px;
+  width: 100%;
+  height: 100%;
+}
+
+.project__content:hover .project__img {
+  filter: brightness(0.9) blur(10px);
+}
+
+.hidden {
+  display: none;
 }
 
 .project_info {
-  margin-top: 1rem;
+  border-radius: 0.5rem;
+  opacity: 0;
+  transform: translateY(10px);
+  transition: all 0.4s ease-in-out;
+  position: absolute;
+  top: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    135deg,
+    rgba(0, 0, 0, 0.8),
+    rgba(255, 255, 255, 0.1)
+  );
 }
-.project__subtitle {
-  font-size: var(--small-font-size);
-  color: var(--text-color-light);
+
+.project__content:hover .project_info {
+  opacity: 1;
+  transform: translateY(0);
+  background: linear-gradient(
+    135deg,
+    rgba(0, 0, 0, 0.6),
+    rgba(255, 255, 255, 0.4)
+  );
 }
 
 .project__title {
-  font-size: var(--h3-font-size);
+  font-size: var(--h4-font-size);
   margin-bottom: 1rem;
+  transition: transform 0.3s ease-in-out;
 }
 
-.project__btn {
+.project__content:hover .project__title {
+  transform: scale(1.1);
+}
+
+.project__subtitle {
+  font-size: var(--small-font-size);
+  color: #d2e0fb;
+}
+
+.project__buttons {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.project__btn,
+.project__btn_git {
   display: inline-flex;
   align-items: center;
   column-gap: 0.5rem;
-  padding: 0.5rem 1rem;
-  border: 2px solid var(--text-color-light);
+  padding: 0.3rem;
   border-radius: 0.5rem;
   color: var(--title-color);
   transition: all 0.3s ease-in-out;
+  background: linear-gradient(45deg, #740938, #ff758c);
+}
+
+.project__btn_git {
+  font-size: 1.5rem;
 }
 
 .project__btn:hover {
-  background-color: var(--title-color);
+  background: linear-gradient(45deg, #ff758c, #740938);
   color: var(--body-color);
   border-color: var(--title-color);
+  animation: pulse 1s infinite;
 }
 
-.project__btn i {
-  transition: transform 0.3s ease;
+@keyframes pulse {
+  0%,
+  100% {
+    box-shadow: 0 0 0 0 var(--title-color);
+  }
+  50% {
+    box-shadow: 0 0 15px 5px rgba(0, 0, 0, 0.2);
+  }
 }
 
+.project__btn i,
+.project__btn_git i {
+  transition:
+    transform 0.3s ease,
+    color 0.3s;
+}
+
+.project__btn_git:hover i {
+  transform: translateY(-0.25rem);
+}
 .project__btn:hover i {
-  transform: translateX(0.25rem);
+  transform: translateX(0.25rem) rotate(10deg);
+  color: var(--body-color);
 }
 .slick-prev:before,
 .slick-next:before {
@@ -480,12 +554,13 @@
 
 .contact__form_tag {
   position: absolute;
+  border-radius: 0.5rem;
   top: -0.75rem;
   left: 1.25rem;
   font-size: var(--tiny-font-size);
   font-weight: var(--font_medium);
   z-index: 10;
-  background-color: var(--body-color);
+  background: var(--bg-navbar);
   padding: 0.35rem;
   transition: background 0.5s ease;
 }
@@ -667,7 +742,9 @@
   font-size: 1.1rem;
   color: var(--title-color);
   z-index: var(--z-tooltip);
-  transition: bottom 0.3s ease, transform 0.3s ease;
+  transition:
+    bottom 0.3s ease,
+    transform 0.3s ease;
 }
 
 .scroll_up:hover {
@@ -867,4 +944,9 @@
   .footer__copy {
     margin-top: 3rem;
   }
+
+  /* .project_info{
+    width: 100%;
+    height: 50%;
+  } */
 }
