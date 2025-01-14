@@ -15,8 +15,8 @@ const Projects = () => {
       img: pro_1,
       title: "Coffee Shop",
       subtitle: "Web",
-      link: "https://brand-liard.vercel.app/",
-      github: "https://github.com/hosamaboud/coffee",
+      link: "https://coffee-ecru.vercel.app/",
+      github: "https://github.com/hosamaboud/coffee-main",
     },
     {
       img: pro_2,
